@@ -45,8 +45,10 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="ElementoNegocio.cs" />
+    <Compile Include="EmailService.cs" />
     <Compile Include="PokemonNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TraineeNegocio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\dominio\dominio.csproj">
@@ -56,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="script_db\POKEDEX_DB.sql" />
+    <Content Include="script_db\USERS table.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
