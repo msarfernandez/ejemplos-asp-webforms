@@ -48,6 +48,7 @@
     <Compile Include="EmailService.cs" />
     <Compile Include="PokemonNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad.cs" />
     <Compile Include="TraineeNegocio.cs" />
   </ItemGroup>
   <ItemGroup>

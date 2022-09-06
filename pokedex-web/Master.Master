@@ -37,6 +37,7 @@
                 <div class="d-flex">
                     <a href="Login.aspx" class="btn btn-success me-2">Login</a>
                     <a href="Registro.aspx" class="btn btn-outline-primary me-2">Registrarse</a>
+
                     <div style="background-color:gray; height:40px; width:40px; border-radius:50%;"></div>
                 </div>
             </div>

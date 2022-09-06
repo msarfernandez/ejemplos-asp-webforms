@@ -38,6 +38,34 @@ namespace negocio
 
         }
 
+        public bool Login(Trainee trainee)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Select id, email, pass, admin from USERS Where email = @email And pass = @pass");
+                datos.setearParametro("@email", trainee.Email);
+                datos.setearParametro("@pass", trainee.Pass);
+                datos.ejecutarLectura();
+                if (datos.Lector.Read())
+                {
+                    trainee.Id = (int)datos.Lector["id"];
+                    trainee.Admin = (bool)datos.Lector["admin"];
+                    return true;
+                }
+                return false;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
 
     }
 }
