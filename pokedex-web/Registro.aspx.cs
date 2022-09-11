@@ -26,7 +26,8 @@ namespace pokedex_web
 
                 user.Email = txtEmail.Text;
                 user.Pass = txtPassword.Text;
-                int id = traineeNegocio.insertarNuevo(user);
+                user.Id = traineeNegocio.insertarNuevo(user);
+                Session.Add("trainee", user);                
 
                 emailService.armarCorreo(user.Email, "Bienvenida Trainee", "Hola te damos la bienvenida a la aplicación...");
                 emailService.enviarEmail();
@@ -35,7 +36,6 @@ namespace pokedex_web
             }
             catch (Exception ex)
             {
-
                 Session.Add("error", ex.ToString());
             }
         }

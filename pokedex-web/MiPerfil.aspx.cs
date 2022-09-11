@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using dominio;
 using negocio;
+using System.IO;
 
 namespace pokedex_web
 {
@@ -15,5 +16,6 @@ namespace pokedex_web
         {            
             
         }
+
     }
 }

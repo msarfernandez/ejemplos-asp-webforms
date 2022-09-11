@@ -35,10 +35,18 @@
                     </ul>
                 </div>
                 <div class="d-flex">
-                    <a href="Login.aspx" class="btn btn-success me-2">Login</a>
-                    <a href="Registro.aspx" class="btn btn-outline-primary me-2">Registrarse</a>
-
-                    <div style="background-color:gray; height:40px; width:40px; border-radius:50%;"></div>
+                    <% if (!negocio.Seguridad.sesionActiva(Session["trainee"])){ %>
+                            <a href="Login.aspx" class="btn btn-success me-2">Login</a>
+                            <a href="Registro.aspx" class="btn btn-outline-primary me-2">Registrarse</a>
+                    <%
+                       }
+                       else {
+                    %>
+                            <asp:Button Text="Salir" ID="btnSalir" cssclass="btn btn-outline-primary me-2" OnClick="btnSalir_Click" runat="server" />
+                    <%} %>
+                    <asp:Image ID="imgPerfil" style="height:40px; width:40px; border-radius:50%;" 
+                        ImageUrl="https://simg.nicepng.com/png/small/202-2022264_usuario-annimo-usuario-annimo-user-icon-png-transparent.png" 
+                        runat="server" />
                 </div>
             </div>
         </nav>
