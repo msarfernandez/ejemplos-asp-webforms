@@ -37,15 +37,14 @@
                 <div class="d-flex">
                     <% if (!negocio.Seguridad.sesionActiva(Session["trainee"])){ %>
                             <a href="Login.aspx" class="btn btn-success me-2">Login</a>
-                            <a href="Registro.aspx" class="btn btn-outline-primary me-2">Registrarse</a>
+                            <a href="Registro.aspx" class="btn btn-outline-primary m-auto">Registrarse</a>
                     <%
                        }
                        else {
                     %>
                             <asp:Button Text="Salir" ID="btnSalir" cssclass="btn btn-outline-primary me-2" OnClick="btnSalir_Click" runat="server" />
                     <%} %>
-                    <asp:Image ID="imgPerfil" style="height:40px; width:40px; border-radius:50%;" 
-                        ImageUrl="https://simg.nicepng.com/png/small/202-2022264_usuario-annimo-usuario-annimo-user-icon-png-transparent.png" 
+                    <asp:Image ID="imgAvatar" style="height:40px; width:40px; border-radius:50%;" 
                         runat="server" />
                 </div>
             </div>

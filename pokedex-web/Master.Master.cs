@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using negocio;
+using dominio;
 
 namespace pokedex_web
 {
@@ -17,6 +18,11 @@ namespace pokedex_web
                 if (!Seguridad.sesionActiva(Session["trainee"]))
                     Response.Redirect("Login.aspx", false);
             }
+
+            if (Seguridad.sesionActiva(Session["trainee"]))
+                imgAvatar.ImageUrl = "~/Images/" + ((Trainee)Session["trainee"]).ImagenPerfil;
+            else
+                imgAvatar.ImageUrl = "https://simg.nicepng.com/png/small/202-2022264_usuario-annimo-usuario-annimo-user-icon-png-transparent.png";
         }
         protected void btnSalir_Click(object sender, EventArgs e)
         {
