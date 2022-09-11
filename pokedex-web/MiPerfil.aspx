@@ -12,15 +12,15 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Nombre</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" TextMode="Password" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Apellido</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtApellido" TextMode="Password" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtApellido" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Fecha de Nacimiento</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtFechaNacimiento" />
+                <asp:TextBox runat="server" CssClass="form-control" ID="txtFechaNacimiento" TextMode="Date" />
             </div>
 
         </div>
