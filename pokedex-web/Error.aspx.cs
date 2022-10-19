@@ -13,5 +13,6 @@ namespace pokedex_web
         {
             lblError.Text = Session["error"].ToString();
         }
+
     }
 }
