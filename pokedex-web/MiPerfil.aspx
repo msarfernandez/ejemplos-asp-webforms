@@ -24,8 +24,6 @@
             <div class="mb-3">
                 <label class="form-label">Apellido</label>
                 <asp:TextBox runat="server" CssClass="form-control" ID="txtApellido" />
-                <%--<asp:RangeValidator ErrorMessage="fuera de rango" MinimumValue="0" MaximumValue="20" ControlToValidate="txtApellido" runat="server" />--%>
-                <asp:RegularExpressionValidator ErrorMessage="Solo números" ControlToValidate="txtApellido" ValidationExpression="^\\d+$" runat="server" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Fecha de Nacimiento</label>
