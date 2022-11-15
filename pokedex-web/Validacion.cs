@@ -17,9 +17,9 @@ namespace negocio
             if(control is TextBox texto)
             {
                 if (string.IsNullOrEmpty(texto.Text))
-                    return false;
-                else
                     return true;
+                else
+                    return false;
 
             }
 
