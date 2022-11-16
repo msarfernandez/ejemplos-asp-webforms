@@ -7,6 +7,21 @@
             font-size: 10px;
         }
     </style>
+    <script>
+        function validar() {
+
+            //capturar el control. 
+            const txtApellido = document.getElementById("txtApellido");
+            if (txtApellido.value == "") {
+                txtApellido.classList.add("is-invalid");
+                //alert("Debes cargar el apellido...");
+                return false;
+            }
+            txtApellido.classList.remove("is-invalid");
+            return true;
+        }
+            
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Mi Perfil</h2>
@@ -23,7 +38,11 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Apellido</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtApellido" />
+                <asp:TextBox ID="txtApellido" ClientIDMode="Static" runat="server" CssClass="form-control" MaxLength="8">
+                </asp:TextBox>
+
+                <%--<asp:RangeValidator ErrorMessage="Fuera de rango..." MinimumValue="1" MaximumValue="256" Type="Integer" ControlToValidate="txtApellido" runat="server" />
+                <asp:RegularExpressionValidator ErrorMessage="Formato incorrecto..." ControlToValidate="txtApellido" ValidationExpression="^[0-9]+$" runat="server"/>--%>
             </div>
             <div class="mb-3">
                 <label class="form-label">Fecha de Nacimiento</label>
@@ -44,7 +63,7 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <asp:Button Text="Guardar" CssClass="btn btn-primary" OnClick="btnGuardar_Click" ID="btnGuardar" runat="server" />
+            <asp:Button Text="Guardar" CssClass="btn btn-primary" OnClientClick="return validar()" OnClick="btnGuardar_Click" ID="btnGuardar" runat="server" />
             <a href="/">Regresar</a>
         </div>
     </div>
