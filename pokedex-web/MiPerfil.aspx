@@ -12,15 +12,17 @@
 
             //capturar el control. 
             const txtApellido = document.getElementById("txtApellido");
+            const txtNombre = document.getElementById("txtNombre");
             if (txtApellido.value == "") {
                 txtApellido.classList.add("is-invalid");
-                //alert("Debes cargar el apellido...");
+                txtApellido.classList.remove("is-valid");
+                txtNombre.classList.add("is-valid");
                 return false;
             }
             txtApellido.classList.remove("is-invalid");
+            txtApellido.classList.add("is-valid");
             return true;
         }
-            
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -33,16 +35,17 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Nombre</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtNombre" />
-                <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="El nombre es requerido" ControlToValidate="txtNombre" runat="server" />
+                <asp:TextBox runat="server" CssClass="form-control" ClientIDMode="Static" ID="txtNombre" />
+                <%--<asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="El nombre es requerido" ControlToValidate="txtNombre" runat="server" />--%>
             </div>
             <div class="mb-3">
                 <label class="form-label">Apellido</label>
                 <asp:TextBox ID="txtApellido" ClientIDMode="Static" runat="server" CssClass="form-control" MaxLength="8">
                 </asp:TextBox>
+                <%--<asp:RangeValidator ErrorMessage="Fuera de rango.." ControlToValidate="txtApellido" Type="Integer" MinimumValue="1" MaximumValue="20" runat="server" />--%>
+                <%--<asp:RegularExpressionValidator ErrorMessage="Formato email por favor" ControlToValidate="txtApellido" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" runat="server" />--%>
 
-                <%--<asp:RangeValidator ErrorMessage="Fuera de rango..." MinimumValue="1" MaximumValue="256" Type="Integer" ControlToValidate="txtApellido" runat="server" />
-                <asp:RegularExpressionValidator ErrorMessage="Formato incorrecto..." ControlToValidate="txtApellido" ValidationExpression="^[0-9]+$" runat="server"/>--%>
+                <%--<asp:RegularExpressionValidator ErrorMessage="Formato incorrecto..." ControlToValidate="txtApellido" ValidationExpression="^[0-9]+$" runat="server"/>--%>
             </div>
             <div class="mb-3">
                 <label class="form-label">Fecha de Nacimiento</label>
