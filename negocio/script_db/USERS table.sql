@@ -30,3 +30,8 @@ create procedure insertarNuevo
 as
 insert into USERS (email, pass, admin) output inserted.id values (@email, @pass, 0)
 
+go
+
+
+insert into USERS (email, pass, admin) output inserted.id values ('admin', 'admin', 1)
+insert into USERS (email, pass, admin) output inserted.id values ('test', 'test', 1)
