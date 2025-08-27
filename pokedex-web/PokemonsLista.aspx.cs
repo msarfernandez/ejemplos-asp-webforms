@@ -33,6 +33,7 @@ namespace pokedex_web
 
         protected void dgvPokemons_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            dgvPokemons.DataSource = Session["listaPokemons"];
             dgvPokemons.PageIndex = e.NewPageIndex;
             dgvPokemons.DataBind();
         }
